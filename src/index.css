@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Lucida Bright";
+}
+.container {
+  max-width: 1200px;
+  margin: 34px auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.notifacation {
+  position: relative;
+  cursor: pointer;
+}
+.notifacation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ab3333;
+}
+.file-input {
+  appearance: none;
+  border: none;
+  outline: none;
+  display: none;
+}
+input[type="file"] {
+  display: none;
+}
+.box img {
+  max-width: 500px;
+  max-height: 300px;
+  object-fit: contain;
+  display: none;
+}
+
+.select:hover{
+  outline:none;
+}
+.cardParent{
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(200px  , 1fr));
+}
+@media (max-width:767px){
+  .cardParent{
+    grid-template-columns: repeat(auto-fill , minmax(150px  , 1fr));
+  }
+}
+@media (max-width:1200px){
+  .cardParent{
+    grid-template-columns: repeat(auto-fill , minmax(175px  , 1fr));
+  }
+}
+@layer utilities {
+  .nav {
+    @apply flex justify-between items-center;
+  }
+  .ul-list {
+    @apply list-none flex flex-1 items-center gap-5 justify-center;
+  }
+  .ul-item {
+    @apply cursor-pointer text-[19px] font-primary;
+  }
+  .nav-info {
+    @apply flex items-center gap-5;
+  }
+  .card {
+    @apply xl:max-w-[220px]  xl:h-[275px] h-[230px] rounded-xl border-2 border-[#E3E2E0] xl:p-5 p-4 cursor-pointer;
+  }
+  .input-addItem {
+    @apply border border-[#E3E2E0] xl:text-xl  xl:max-w-[445px] h-[35px] block p-6 rounded-lg focus:outline-none;
+  }
+}
