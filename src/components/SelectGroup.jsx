@@ -9,7 +9,7 @@ const SelectGroup = () => {
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
-    setSelectedLabel(""); // Reset sub-select label when changing the category
+    setSelectedLabel("");
   };
 
   const handleSalesChange = (event) => {
@@ -37,6 +37,7 @@ const SelectGroup = () => {
                 id="parent-select"
                 className="w-full p-[13px]  text-lg text-[#453A3C] cursor-pointer font-primary focus:outline-none hover: border border-gray-300 rounded-lg"
                 onChange={handleCategoryChange}
+                value={selectedCategory}
               >
                 <option value="" disabled selected>
                   {selectedLabel === "" ? "Choose category" : selectedLabel}
