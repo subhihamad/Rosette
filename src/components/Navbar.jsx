@@ -84,10 +84,10 @@ const Navbar = () => {
 
         <div className="nav-info">
           <div className="notifacation">
-            <img className="w-8 h-8" src="/Rosette/assets/bell.png" />
+            <img className="xl:w-8 xl:h-8 w-7 h-7" src="/Rosette/assets/bell.png" />
           </div>
-          <div className="w-12 h-12 rounded-full bg-userIcon flex justify-center items-center cursor-pointer ">
-            <img className="w-8 h-8" src="/Rosette/assets/user.png" />
+          <div className="xl:w-12 xl:h-12 w-10 h-10 rounded-full bg-userIcon flex justify-center items-center cursor-pointer ">
+            <img className="xl:w-8 xl:h-8 w-7 h-7" src="/Rosette/assets/user.png" />
           </div>
         </div>
       </nav>

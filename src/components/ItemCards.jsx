@@ -18,15 +18,15 @@ const ItemCards = () => {
             />
             <div className="absolute -right-3 top-10 flex flex-col justify-between h-[50px]">
               <span
-                className="w-3 h-3 rounded-full block"
+                className="rose-colors"
                 style={{ backgroundColor: `${item.colors[0]}` }}
               ></span>
               <span
-                className="w-3 h-3 rounded-full block"
+                className="rose-colors"
                 style={{ backgroundColor: `${item.colors[1]}` }}
               ></span>
               <span
-                className="w-3 h-3 rounded-full block"
+                className="rose-colors"
                 style={{ backgroundColor: `${item.colors[2]}` }}
               ></span>
             </div>

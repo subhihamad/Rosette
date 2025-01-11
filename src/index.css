@@ -87,6 +87,15 @@ input[type="file"] {
     @apply xl:max-w-[220px]  xl:h-[275px] h-[230px] rounded-xl border-2 border-[#E3E2E0] xl:p-5 p-4 cursor-pointer;
   }
   .input-addItem {
-    @apply border border-[#E3E2E0] xl:text-xl  xl:max-w-[445px] h-[35px] block p-6 rounded-lg focus:outline-none;
+    @apply border-2 border-[#E3E2E0] xl:text-xl md:max-w-[75%]  xl:max-w-[445px] h-[35px] block p-6 rounded-lg focus:outline-none;
+  }
+  .select-item{
+   @apply p-[13px] block  md:w-[75%] xl:w-[445px] w-full h-[52px] text-lg text-[#453A3C] cursor-pointer font-primary focus:outline-none border-2 border-gray-300 rounded-lg
+  }
+  .save-btn{
+    @apply bg-[#AB3333]  w-[180px] py-1 font-primary mt-10 text-white text-xl rounded-md
+  }
+  .rose-colors{
+    @apply w-3 h-3 rounded-full block
   }
 }

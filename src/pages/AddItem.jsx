@@ -71,7 +71,7 @@ const AddItem = () => {
             <SelectGroup />
             <ColorsSelector />
             <button
-            className="bg-[#AB3333] xl:block hidden w-[180px] font-primary mt-10 text-white text-xl rounded-md"
+            className="xl:block hidden save-btn"
             type="submit"
           >
             save
@@ -81,7 +81,7 @@ const AddItem = () => {
             <UploadFile />
           </div>
           <button
-            className="bg-[#AB3333] xl:hidden block w-[180px] font-primary mt-10 text-white text-xl rounded-md"
+            className="xl:hidden block save-btn"
             type="submit"
           >
             save

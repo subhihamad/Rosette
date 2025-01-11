@@ -30,12 +30,12 @@ const SelectGroup = () => {
   return (
     <>
       {!selectedLabel && (
-        <div className="xl:max-w-md  rounded-xl  font-primary mt-8">
+        <div className="xl:max-w-md md:mx-w-[75%]  rounded-xl  font-primary mt-8">
           {selectedCategory === "" ? (
             <div className="mb-4">
               <select
                 id="parent-select"
-                className="w-full p-[13px]  text-lg text-[#453A3C] cursor-pointer font-primary focus:outline-none hover: border border-gray-300 rounded-lg"
+                className="select-item"
                 onChange={handleCategoryChange}
                 value={selectedCategory}
               >
@@ -52,7 +52,7 @@ const SelectGroup = () => {
           {selectedCategory === "sales" && (
             <div className="mb-4">
               <select
-                className="w-full cursor-pointer text-[#453A3C] focus:outline-none p-[13px] border border-gray-300 rounded-lg"
+                className="select-item"
                 onChange={handleSalesChange}
                 value={salesValue}
               >
@@ -69,7 +69,7 @@ const SelectGroup = () => {
           {selectedCategory === "bouquets" && (
             <div className="mb-4">
               <select
-                className="w-full p-[13px] cursor-pointer text-[#453A3C] focus:outline-none border border-gray-300 rounded-lg"
+                className="select-item"
                 onChange={handleBouquetsChange}
                 value={bouquetsValue}
               >
@@ -86,7 +86,7 @@ const SelectGroup = () => {
           {selectedCategory === "indoor-plants" && (
             <div className="mb-4">
               <select
-                className="w-full p-[13px] cursor-pointer text-[#453A3C] focus:outline-none border border-gray-300 rounded-lg"
+                className="select-item"
                 onChange={handleIndoorPlantsChange}
                 value={indoorPlantsValue}
               >
@@ -104,8 +104,7 @@ const SelectGroup = () => {
       {selectedLabel && (
         <div className="max-w-md rounded-xl font-primary mt-8">
           <select
-            className="w-full text-[#453A3C] p-[13px] font-primary focus:outline-none hover: border
-          border-gray-300 rounded-lg"
+            className="select-item"
           >
             <option className="font-primary font-semibold " value="">
               {selectedLabel}

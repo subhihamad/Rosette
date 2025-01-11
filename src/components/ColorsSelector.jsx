@@ -37,7 +37,7 @@ const ColorsSelector = () => {
   return (
     <div className="xl:max-w-md relative rounded-xl  font-primary mt-8">
       <select
-        className="w-full p-[13px] text-lg text-[#453A3C] cursor-pointer font-primary focus:outline-none hover: border border-gray-300 rounded-lg"
+        className="select-item"
         onClick={() => setShowPalette(!showPalette)}
       >
         <option className="text-xl text-[#453A3C]" value="">
