@@ -46,6 +46,7 @@ input[type="file"] {
   display: none;
 }
 
+
 .select:hover{
   outline:none;
 }
@@ -53,14 +54,20 @@ input[type="file"] {
   display: grid;
   grid-template-columns: repeat(auto-fill , minmax(200px  , 1fr));
 }
+@media (max-width:1200px){
+  .cardParent{
+    grid-template-columns: repeat(auto-fill , minmax(175px  , 1fr));
+  }
+}
 @media (max-width:767px){
   .cardParent{
     grid-template-columns: repeat(auto-fill , minmax(150px  , 1fr));
   }
-}
-@media (max-width:1200px){
-  .cardParent{
-    grid-template-columns: repeat(auto-fill , minmax(175px  , 1fr));
+  .box img{
+    max-width: 300px;
+    max-height: 200px;
+    text-align: center;
+    width: 100%
   }
 }
 @layer utilities {

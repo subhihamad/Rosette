@@ -47,7 +47,7 @@ const ColorsSelector = () => {
 
       {showPalette && (
         <div
-          className="grid gap-1 border-2 border-[#E3E2E0] p-2 rounded-lg  xl:absolute w-fit left-full"
+          className="grid gap-1 border-2 border-[#E3E2E0] p-2 rounded-lg  xl:absolute w-fit xl:left-full"
           style={{ gridTemplateColumns: "repeat(7, 30px)" }}  
         >
           {colors.map((color, index) => (
