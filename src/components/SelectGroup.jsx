@@ -102,7 +102,7 @@ const SelectGroup = () => {
         </div>
       )}
       {selectedLabel && (
-        <div className="max-w-md rounded-xl font-primary mt-8">
+        <div className="rounded-xl font-primary mt-8">
           <select
             className="select-item"
           >

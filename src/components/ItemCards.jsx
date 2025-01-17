@@ -6,10 +6,10 @@ const ItemCards = () => {
     <>
       {productItems.map((item) => (
         <div key={item.id} className="card font-primary flex flex-col justify-center  animate-move">
-          <h2 className="xl:text-[19px] text-[15px] text-nowrap text-[#453A3C] font-primary font-semibold">
+          <h1 className="xl:text-lg text-sm text-nowrap text-[#453A3C] font-primary font-semibold">
             {item.itemName}
-          </h2>
-          <p className="text-[#979797] xl:text-[17px] text-[13px] ">{item.itemTypeName}</p>
+          </h1>
+          <p className="text-[#979797] xl:text-lg text-sm ">{item.itemTypeName}</p>
           <div className="relative flex justify-center  items-center">
             <img
               className="xl:max-w-[230px] xl:max-h-[150px] max-w-[200px] max-h-[125px]  h-fit"
@@ -33,10 +33,10 @@ const ItemCards = () => {
             
           </div>
           <div className="flex justify-between mt-[5%] w-full">
-              <p className="text-[#979797] font-primary xl:text-[19px] text-[13px]">
+              <p className="text-[#979797] font-primary xl:text-lg text-sm">
                 {item.itemType}
               </p>
-              <h3 className="xl:text-[21px] text-[17px] font-primary font-semibold">
+              <h3 className="xl:text-lg text-sm font-primary font-semibold">
                 {item.itemPrice}
               </h3>
             </div>

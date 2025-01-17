@@ -14,12 +14,14 @@ const AddItem = () => {
   });
   const handleSubmit = () => {};
   return (
-    <div className="lg:mt-8">
-      <h1 className="text-logo font-primary mt-2 xl:text-3xl text-2xl ">Add new item</h1>
+    <div className="lg:mt-8 md:ml-[15%] xl:ml-0">
+      <h1 className="text-logo font-primary mt-2 xl:text-3xl text-2xl ">
+        Add new item
+      </h1>
 
-      <section className="xl:mt-5 mt-2">
+      <section className="xl:mt-5  mt-2">
         <form
-          className="flex xl:justify-between xl:flex-row flex-col"
+          className="flex xl:justify-between  flex-col xl:flex-row"
           method="GET"
           onSubmit={handleSubmit}
         >
@@ -70,20 +72,14 @@ const AddItem = () => {
             </div>
             <SelectGroup />
             <ColorsSelector />
-            <button
-            className="xl:block hidden save-btn"
-            type="submit"
-          >
-            save
-          </button>
+            <button className="xl:block hidden save-btn" type="submit">
+              save
+            </button>
           </div>
           <div className="xl:flex-1 xl:flex justify-center">
             <UploadFile />
           </div>
-          <button
-            className="xl:hidden block save-btn"
-            type="submit"
-          >
+          <button className="xl:hidden block save-btn" type="submit">
             save
           </button>
         </form>
