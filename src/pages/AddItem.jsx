@@ -4,6 +4,7 @@ import { MenuItem } from "@mui/material";
 import SelectGroup from "../components/SelectGroup";
 import ColorsSelector from "../components/ColorsSelector";
 import UploadFile from "../components/UploadFile";
+import { userInfo } from "../context/ContextProvider";
 
 const AddItem = () => {
   const [itemValues, setItemValues] = useState({
@@ -12,32 +13,69 @@ const AddItem = () => {
     category: "",
     colors: [],
   });
+  const { language } = userInfo();
   const handleSubmit = () => {};
   return (
-    <div className="lg:mt-8 md:ml-[15%] xl:ml-0">
-      <h1 className="text-logo font-primary mt-2 xl:text-3xl text-2xl ">
-        Add new item
-      </h1>
-
-      <section className="xl:mt-5  mt-2">
+    <div className={`lg:mt-8 md:ml-[15%] xl:ml-0 `}>
+      <section className={`xl:mt-5  mt-2 `}>
+        <h1
+          className={`text-logo font-primary my-2  xl:text-3xl text-2xl  ${
+            language === "arabic" ? "text-right" : "text-left"
+          } `}
+        >
+          {language === "arabic"
+            ? "أضف عنصر جديد"
+            : language === "french"
+            ? "Ajouter un nouvel élément"
+            : language === "spanish"
+            ? "Agregar nuevo elemento"
+            : language === "german"
+            ? "Neues Element hinzufügen"
+            : "Add new item"}
+        </h1>
         <form
-          className="flex xl:justify-between  flex-col xl:flex-row"
+          className={`flex xl:justify-between  flex-col ${
+            language === "arabic" ? "xl:flex-row-reverse" : "xl:flex-row"
+          } `}
           method="GET"
           onSubmit={handleSubmit}
         >
-          <div className="flex-1">
+          <div
+            className={`${language === "arabic" ? "text-right" : "text-left"}`}
+          >
             <div className="flex flex-col">
-              <label className="font-primary mb-2 text-xl " htmlFor="text">
-                Item Name <span className="text-logo">*</span>
+              <label className="font-primary  mb-2 text-xl " htmlFor="text">
+                {language === "arabic"
+                  ? "اسم العنصر"
+                  : language === "french"
+                  ? "nom de l'élément"
+                  : language === "spanish"
+                  ? "nombre del artículo"
+                  : language === "german"
+                  ? "Einzelteilname"
+                  : "Item Name"}{" "}
+                <span className="text-logo">*</span>
               </label>
               <input
                 type="text"
                 required
-                placeholder="exp: Tulips"
+                placeholder={
+                  language === "arabic"
+                    ? "مثال:التوليب"
+                    : language === "french"
+                    ? "exp : Tulipes"
+                    : language === "spanish"
+                    ? "exp: Tulipanes"
+                    : language === "german"
+                    ? "exp: Tulpen"
+                    : "exp: Tulips"
+                }
                 name="text"
                 id="text"
                 value={itemValues.name}
-                className="input-addItem"
+                className={`input-addItem ${
+                  language === "arabic" ? "text-right" : "text-left"
+                }`}
                 onChange={(e) =>
                   setItemValues((prev) => {
                     return {
@@ -50,16 +88,37 @@ const AddItem = () => {
             </div>
             <div className="flex flex-col mt-5 ">
               <label className="font-primary mb-2 text-xl " htmlFor="price">
-                Item Price <span className="text-logo">*</span>
+                {language === "arabic"
+                  ? "سعر العنصر"
+                  : language === "french"
+                  ? "prix de l'objet"
+                  : language === "spanish"
+                  ? "nombre del artículo"
+                  : language === "german"
+                  ? "Artikelpreis"
+                  : "Item Price"}{" "}
+                <span className="text-logo">*</span>
               </label>
               <input
                 type="text"
                 required
-                placeholder="exp: $10"
+                placeholder={
+                  language === "arabic"
+                    ? "مثال:$10"
+                    : language === "french"
+                    ? "exp : 10 $"
+                    : language === "spanish"
+                    ? "exp: $10"
+                    : language === "german"
+                    ? "exp: $10"
+                    : "exp: $10"
+                }
                 name="text"
                 id="price"
                 value={itemValues.price}
-                className="input-addItem"
+                className={`input-addItem ${
+                  language === "arabic" ? "text-right" : "text-left"
+                }`}
                 onChange={(e) =>
                   setItemValues((prev) => {
                     return {
@@ -72,16 +131,44 @@ const AddItem = () => {
             </div>
             <SelectGroup />
             <ColorsSelector />
-            <button className="xl:block hidden save-btn" type="submit">
-              save
-            </button>
+            <div
+              className={`${
+                language === "arabic" ? "flex items-center justify-end" : ""
+              }`}
+            >
+              <button className={`xl:block hidden save-btn `} type="submit">
+                {language === "arabic"
+                  ? "حفظ"
+                  : language === "french"
+                  ? "sauver"
+                  : language === "spanish"
+                  ? "salvar"
+                  : language === "german"
+                  ? "speichern"
+                  : "save"}
+              </button>
+            </div>
           </div>
-          <div className="xl:flex-1 xl:flex justify-center">
+          <div
+            className={`xl:flex xl:flex-1 xl:justify-center ${
+              language === "arabic" ? "text-right" : "text-left"
+            } `}
+          >
             <UploadFile />
           </div>
-          <button className="xl:hidden block save-btn" type="submit">
-            save
-          </button>
+          <div className="xl:hidden md:w-3/4 flex justify-center  mt-5">
+            <button className=" save-btn " type="submit">
+              {language === "arabic"
+                ? "حفظ"
+                : language === "french"
+                ? "sauver"
+                : language === "spanish"
+                ? "salvar"
+                : language === "german"
+                ? "speichern"
+                : "save"}
+            </button>
+          </div>
         </form>
       </section>
     </div>

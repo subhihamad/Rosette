@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { userInfo } from "../context/ContextProvider";
 
 const ColorsSelector = () => {
   const [showPalette, setShowPalette] = useState(false);
   const [colorsBox, setColorsBox] = useState([]);
+  const {language}=userInfo();
   console.log(colorsBox);
   const colors = [
     "#FFFFFF",
@@ -34,14 +36,28 @@ const ColorsSelector = () => {
     "#ADD8E6",
   ];
 
+  const colorLabel=language === "arabic"
+  ? "حدد ألوان المنتج"
+  : language === "french"
+  ? "Sélectionner les couleurs de l’élément"
+  : language === "spanish"
+  ? "Seleccionar los colores de los elementos"
+  : language === "german"
+  ? "Wählen Sie die Farben des Objekts"
+  : "Selecte item colors"
+
   return (
-    <div className="xl:max-w-md relative rounded-xl  font-primary mt-8">
+    <div className={`xl:max-w-md relative rounded-xl  font-primary mt-8 ${
+      language === "arabic" ? "text-right" : "text-left"
+    }`}>
       <select
-        className="select-item"
+        className={`select-item ${
+          language === "arabic" ? "text-right" : "text-left"
+        }`}
         onClick={() => setShowPalette(!showPalette)}
       >
         <option className="text-xl text-[#453A3C]" value="">
-          Selecte item colors
+          {colorLabel}
         </option>
       </select>
 

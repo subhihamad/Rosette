@@ -1,6 +1,10 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import SelectType from "./SelectType";
+import { MenuItem } from "@mui/material";
+import { userInfo } from "../context/ContextProvider";
+import ChooseLanguage from "./ChooseLanguage";
 
 const Navbar = () => {
   const isDesktopOrLaptop = useMediaQuery({
@@ -10,9 +14,14 @@ const Navbar = () => {
     fontWeight: "bold",
     color: "#AB3333",
   };
+  const { language } = userInfo();
   return (
     <>
-      <nav className="nav">
+      <nav
+        className={`nav ${
+          language === "arabic" ? "xl:flex-row-reverse" : "xl:flex-row"
+        }`}
+      >
         {isDesktopOrLaptop ? (
           <>
             <h1>
@@ -20,7 +29,11 @@ const Navbar = () => {
                 Rosette
               </Link>
             </h1>
-            <ul className="ul-list">
+            <ul
+              className={`ul-list ${
+                language === "arabic" ? "xl:flex-row-reverse" : "xl:flex-row"
+              }`}
+            >
               <li>
                 <NavLink
                   end
@@ -28,7 +41,15 @@ const Navbar = () => {
                   to="dashoard"
                   className="ul-item"
                 >
-                  Dashboard
+                  {language === "arabic"
+                    ? "لوحة التحكم"
+                    : language === "french"
+                    ? "tableau de bord"
+                    : language === "spanish"
+                    ? "panel de control"
+                    : language === "german"
+                    ? "Armaturenbrett"
+                    : "Dashboard"}
                 </NavLink>
               </li>
               <li>
@@ -37,7 +58,15 @@ const Navbar = () => {
                   className="ul-item"
                   to="reports"
                 >
-                  Reports
+                  {language === "arabic"
+                    ? "تقارير"
+                    : language === "french"
+                    ? "rapports"
+                    : language === "spanish"
+                    ? "informes"
+                    : language === "german"
+                    ? "reports"
+                    : "Reports"}
                 </NavLink>
               </li>
               <li>
@@ -46,48 +75,78 @@ const Navbar = () => {
                   className="ul-item"
                   to="/items"
                 >
-                  Items
+                  {language === "arabic"
+                    ? "منتجات"
+                    : language === "french"
+                    ? "items"
+                    : language === "spanish"
+                    ? "objetos"
+                    : language === "german"
+                    ? "Gegenstände"
+                    : "Items"}
                 </NavLink>
               </li>
-              <li>
-                {/* <NavLink
+              {/* <li>
+                <NavLink
               style={({ isActive }) => (isActive ? styles : null)}
               className="ul-item"
               to='users'
             >
               Users
-            </NavLink> */}
-              </li>
+            </NavLink>
+              </li> */}
               <li>
                 <NavLink
                   style={({ isActive }) => (isActive ? styles : null)}
                   className="ul-item"
                   to="orders"
                 >
-                  Orders
+                  {language === "arabic"
+                    ? "طلبات"
+                    : language === "french"
+                    ? "ordres"
+                    : language === "spanish"
+                    ? "órdenes"
+                    : language === "german"
+                    ? "Bestellungen"
+                    : "Orders"}
                 </NavLink>
+              </li>
+              <li>
+                <ChooseLanguage />
               </li>
             </ul>
           </>
         ) : (
           <>
-            <img className="w-9 h-9 cursor-pointer" src="/Rosette/assets/burger.png" alt="burger icon" />
+            <img
+              className="w-9 h-9 cursor-pointer"
+              src="/Rosette/assets/burger.png"
+              alt="burger icon"
+            />
             <NavLink
-                  style={({ isActive }) => (isActive ? styles : null)}
-                  className="ul-item"
-                  to="/items"
-                >
-                  Items
-                </NavLink>
+              style={({ isActive }) => (isActive ? styles : null)}
+              className="ul-item"
+              to="/items"
+            >
+              Items
+            </NavLink>
+            <ChooseLanguage />
           </>
         )}
 
         <div className="nav-info">
           <div className="notifacation">
-            <img className="xl:w-8 xl:h-8 w-7 h-7" src="/Rosette/assets/bell.png" />
+            <img
+              className="xl:w-8 xl:h-8 w-7 h-7"
+              src="/Rosette/assets/bell.png"
+            />
           </div>
           <div className="xl:w-12 xl:h-12 w-10 h-10 rounded-full bg-userIcon flex justify-center items-center cursor-pointer ">
-            <img className="xl:w-8 xl:h-8 w-7 h-7" src="/Rosette/assets/user.png" />
+            <img
+              className="xl:w-8 xl:h-8 w-7 h-7"
+              src="/Rosette/assets/user.png"
+            />
           </div>
         </div>
       </nav>
