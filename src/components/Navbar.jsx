@@ -124,12 +124,23 @@ const Navbar = () => {
               src="/Rosette/assets/burger.png"
               alt="burger icon"
             />
-            <NavLink
+             <Link className="text-logo font-logoIcon text-lg" to="/">
+                Rosette
+              </Link>
+              <NavLink
               style={({ isActive }) => (isActive ? styles : null)}
               className="ul-item"
               to="/items"
             >
-              Items
+              {language === "arabic"
+                    ? "منتجات"
+                    : language === "french"
+                    ? "items"
+                    : language === "spanish"
+                    ? "objetos"
+                    : language === "german"
+                    ? "Gegenstände"
+                    : "Items"}
             </NavLink>
             <ChooseLanguage />
           </>

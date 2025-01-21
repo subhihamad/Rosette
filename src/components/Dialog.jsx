@@ -25,6 +25,8 @@ export default function AlertDialogSlide() {
     setOpen(false);
     setSaveData(false);
   };
+
+  
   const handleAgree = () => {
     setOpen(false);
     setSaveData(true);

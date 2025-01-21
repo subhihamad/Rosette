@@ -18,18 +18,13 @@ const ContextProvider = ({ children }) => {
   const [saveData, setSaveData] = useState(false);
 
   useEffect(() => {
-    if (
-      language === "arabic" ||
-      language === "spanish" ||
-      language === "german" ||
-      language === "french" ||
-      language === "english"
-    ) {
+    if (cookieValue) {
       setSaveData(true);
     } else {
       function deleteCookie(name) {
         setCookie(name, "", -1);
       }
+      setSaveData(false);
       deleteCookie("lanuageCookie");
     }
   }, [language]);

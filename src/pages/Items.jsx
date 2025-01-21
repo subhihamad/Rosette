@@ -11,8 +11,8 @@ const Items = () => {
   return (
     <main className="xl:mt-8">
       <div className="flex flex-wrap xl:justify-between items-center">
-        <div className="flex flex-1 max-xl:mt-8 items-center max-xl:justify-between gap-10">
-          <p className="text-logo font-primary text-[18px]">
+        <div className="flex flex-1 max-xl:my-5 items-center max-xl:justify-between gap-10">
+          <p className="text-logo font-primary text-nowrap xl:text-lg text-sm">
             <Link to="addItem">
               <span className="mr-2 ">+</span>
               {language === "arabic"
@@ -36,6 +36,7 @@ const Items = () => {
               textAlign: "center",
               fontFamily: "Lucida Bright",
               fontSize: "18px",
+
             }}
           >
             <MenuItem value="">
