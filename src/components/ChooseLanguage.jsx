@@ -1,23 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import SelectType from "./SelectType";
 import { MenuItem } from "@mui/material";
 import { userInfo } from "../context/ContextProvider";
-import { useNavigate, useParams } from "react-router";
-
-const iconHeader = () => {};
+import { useNavigate } from "react-router";
 
 const ChooseLanguage = () => {
   const { language, saveData } = userInfo();
   const navigate = useNavigate();
-  console.log(window.location.pathname);
+  const [imgSrc, setImgSrc] = useState("");
 
-  const reload = () => {
-    if (window.location.pathname !== "/Rosette/" && saveData) {
-      navigate(0);
-    }
-  };
+  useEffect(() => {
+    const getImageSource = (lang) => {
+      switch (lang) {
+        case "english":
+          return "/Rosette/assets/united-kingdom.png";
+        case "arabic":
+          return "/Rosette/assets/saudi-arabia.png";
+        case "french":
+          return "/Rosette/assets/france.png";
+        case "spanish":
+          return "/Rosette/assets/spain.png";
+        case "german":
+          return "/Rosette/assets/germany.png";
+        default:
+          return null;
+      }
+    };
 
-  console.log(language);
+    setImgSrc(getImageSource(language));
+  }, [language]);
+
+
+
   return (
     <>
       <SelectType
@@ -31,27 +45,13 @@ const ChooseLanguage = () => {
           fontSize: "18px",
         }}
       >
-        <MenuItem sx={{ margin: "0" }} onClick={reload} value="">
-          <img
-            className="icon-flag"
-            src={`${
-              language === "english"
-                ? "/Rosette/assets/united-kingdom.png"
-                : language === "arabic"
-                ? "/Rosette/assets/saudi-arabia.png"
-                : language === "french"
-                ? "/Rosette/assets/france.png"
-                : language === "spanish"
-                ? "/Rosette/assets/spain.png"
-                : language === "german"
-                ? "/Rosette/assets/germany.png"
-                : null
-            }`}
-          />
+        <MenuItem selected sx={{ margin: "0" }}  value="">
+          <img className="icon-flag" src={imgSrc} alt="flag" />
+          
         </MenuItem>
 
         {language !== "english" && (
-          <MenuItem onClick={reload} value={"english"}>
+          <MenuItem  value={"english"}>
             <img
               className="icon-flag"
               src="/Rosette/assets/united-kingdom.png"
@@ -61,7 +61,7 @@ const ChooseLanguage = () => {
         )}
 
         {language !== "arabic" && (
-          <MenuItem onClick={reload} value={"arabic"}>
+          <MenuItem  value={"arabic"}>
             <img
               className="icon-flag"
               src="/Rosette/assets/saudi-arabia.png"
@@ -71,30 +71,18 @@ const ChooseLanguage = () => {
         )}
 
         {language !== "french" && (
-          <MenuItem onClick={reload} value={"french"}>
-            <img
-              className="icon-flag"
-              src="/Rosette/assets/france.png"
-              alt="france"
-            />
+          <MenuItem  value={"french"}>
+            <img className="icon-flag" src="/Rosette/assets/france.png" alt="france" />
           </MenuItem>
         )}
         {language !== "spanish" && (
-          <MenuItem onClick={reload} value={"spanish"}>
-            <img
-              className="icon-flag"
-              src="/Rosette/assets/spain.png"
-              alt="spain"
-            />
+          <MenuItem  value={"spanish"}>
+            <img className="icon-flag" src="/Rosette/assets/spain.png" alt="spain" />
           </MenuItem>
         )}
         {language !== "german" && (
-          <MenuItem onClick={reload} value={"german"}>
-            <img
-              className="icon-flag"
-              src="/Rosette/assets/germany.png"
-              alt="germany"
-            />
+          <MenuItem  value={"german"}>
+            <img className="icon-flag" src="/Rosette/assets/germany.png" alt="germany" />
           </MenuItem>
         )}
       </SelectType>
