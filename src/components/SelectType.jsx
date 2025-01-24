@@ -30,7 +30,7 @@ export default function SelectType({ style, children }) {
 
   React.useEffect(() => {
     if (saveData === true) setCookie("lanuageCookie", language, 3);
-  }, [language]);
+  });
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -43,7 +43,7 @@ export default function SelectType({ style, children }) {
           value={value}
           onChange={handleChange}
           className="select"
-          displayEmpty="false"
+          displayEmpty={true}
           inputProps={{ "aria-label": "Without label" }}
           sx={style}
         >

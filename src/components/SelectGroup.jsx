@@ -8,10 +8,6 @@ const SelectGroup = () => {
   const [selectedLabel, setSelectedLabel] = useState("");
   const { language } = userInfo();
 
-  
-
-  
-
   const sales =
     language === "arabic"
       ? "مبيعات"
@@ -134,7 +130,8 @@ const SelectGroup = () => {
       : language === "german"
       ? "haustierfreundliche"
       : "Pet-Friendly";
-      const chooseCategory= language === "arabic"
+  const chooseCategory =
+    language === "arabic"
       ? "اختر الفئة"
       : language === "french"
       ? "Choisir une catégorie"
@@ -142,41 +139,41 @@ const SelectGroup = () => {
       ? "Elegir categoría"
       : language === "german"
       ? "Kategorie wählen"
-      : "Choose category"
-      
+      : "Choose category";
 
-      useEffect(()=>{
-        setSelectedCategory('');
-        setSelectedLabel('');
-      },[language])
+  useEffect(() => {
+    setSelectedCategory("");
+    setSelectedLabel("");
+  }, [language]);
 
-      const handleCategoryChange = (event) => {
-        setSelectedCategory(event.target.value);
-        setSelectedLabel("");
-      };
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
+    setSelectedLabel("");
+  };
 
-        const handleSalesChange = (event) => {
-          setSalesValue(event.target.value);
-          setSelectedLabel(`${sales}:${event.target.value}`);
-        };
-      
-        const handleBouquetsChange = (event) => {
-          setBouquetsValue(event.target.value);
-          setSelectedLabel(`${bouquets}:${event.target.value}`);
-        };
-      
-        const handleIndoorPlantsChange = (event) => {
-          setIndoorPlantsValue(event.target.value);
-          setSelectedLabel(`${indoorPlants}:${event.target.value}`);
-        };
-  
+  const handleSalesChange = (event) => {
+    setSalesValue(event.target.value);
+    setSelectedLabel(`${sales}:${event.target.value}`);
+  };
+
+  const handleBouquetsChange = (event) => {
+    setBouquetsValue(event.target.value);
+    setSelectedLabel(`${bouquets}:${event.target.value}`);
+  };
+
+  const handleIndoorPlantsChange = (event) => {
+    setIndoorPlantsValue(event.target.value);
+    setSelectedLabel(`${indoorPlants}:${event.target.value}`);
+  };
 
   return (
     <>
       {!selectedLabel && (
-        <div className={`xl:max-w-md md:mx-w-[75%]  rounded-xl  font-primary mt-8 ${
-          language === "arabic" ? "text-right" : "text-left"
-        }`}>
+        <div
+          className={`xl:max-w-md md:mx-w-[75%]  rounded-xl  font-primary mt-8 ${
+            language === "arabic" ? "text-right" : "text-left"
+          }`}
+        >
           {selectedCategory === "" ? (
             <div className="mb-4">
               <select
@@ -265,9 +262,11 @@ const SelectGroup = () => {
       )}
       {selectedLabel && (
         <div className="rounded-xl font-primary mt-8">
-          <select className={`select-item ${
-                  language === "arabic" ? "text-right" : "text-left"
-                }`}>
+          <select
+            className={`select-item ${
+              language === "arabic" ? "text-right" : "text-left"
+            }`}
+          >
             <option className="font-primary font-semibold " value="">
               {selectedLabel}
             </option>

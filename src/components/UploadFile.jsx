@@ -33,7 +33,11 @@ const UploadFile = () => {
 
   return (
     <div className={`mt-8`}>
-      <div className={`flex  flex-nowrap ${language === "arabic" ? "justify-end" : "justify-start"}`}>
+      <div
+        className={`flex  flex-nowrap ${
+          language === "arabic" ? "justify-end" : "justify-start"
+        }`}
+      >
         <label htmlFor="img_upload" className="flex cursor-pointer">
           <img
             className={`w-7 h-7 ${language === "arabic" ? "block" : "hidden"} `}

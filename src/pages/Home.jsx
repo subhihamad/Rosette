@@ -1,14 +1,15 @@
-import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
-import { productItems } from '../constants';
+import React, { useEffect, useState } from 'react'
 import AlertDialogSlide from '../components/Dialog';
-import { getCookie } from '../context/ContextProvider';
+import { getCookie, userInfo } from '../context/ContextProvider';
+import PlaceholderPosts from '../components/PlaceholderPosts';
 
 const Home = () => {
   let cookieValue = getCookie("lanuageCookie");
+  let {saveData}=userInfo();
   return (
     <div>
-      {!cookieValue && <AlertDialogSlide />}
+      {!cookieValue  && saveData==="empty" &&  <AlertDialogSlide />}
+      <PlaceholderPosts />
     </div>
   )
 }

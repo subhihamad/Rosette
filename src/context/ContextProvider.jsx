@@ -15,12 +15,11 @@ const ContextProvider = ({ children }) => {
   const [language, setLanguage] = useState(
     cookieValue ? cookieValue : "english"
   );
-  const [saveData, setSaveData] = useState(false);
-
+  const [saveData, setSaveData] = useState("empty");
   useEffect(() => {
     if (cookieValue) {
       setSaveData(true);
-    } else {
+    } else if(saveData !== "empty"){
       function deleteCookie(name) {
         setCookie(name, "", -1);
       }

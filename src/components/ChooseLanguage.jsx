@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import SelectType from "./SelectType";
 import { MenuItem } from "@mui/material";
 import { userInfo } from "../context/ContextProvider";
-import { useNavigate } from "react-router";
 
 const ChooseLanguage = () => {
-  const { language, saveData } = userInfo();
-  const navigate = useNavigate();
+  const { language , saveData } = userInfo();
   const [imgSrc, setImgSrc] = useState("");
 
   useEffect(() => {
@@ -28,10 +26,8 @@ const ChooseLanguage = () => {
     };
 
     setImgSrc(getImageSource(language));
-  }, [language]);
-
-
-
+  }, [language , saveData]);
+  console.log(language)
   return (
     <>
       <SelectType
@@ -45,13 +41,12 @@ const ChooseLanguage = () => {
           fontSize: "18px",
         }}
       >
-        <MenuItem selected sx={{ margin: "0" }}  value="">
+        <MenuItem  selected sx={{ margin: "0" }} value={language}>
           <img className="icon-flag" src={imgSrc} alt="flag" />
-          
         </MenuItem>
 
         {language !== "english" && (
-          <MenuItem  value={"english"}>
+          <MenuItem value={"english"}>
             <img
               className="icon-flag"
               src="/Rosette/assets/united-kingdom.png"
@@ -61,7 +56,7 @@ const ChooseLanguage = () => {
         )}
 
         {language !== "arabic" && (
-          <MenuItem  value={"arabic"}>
+          <MenuItem value={"arabic"}>
             <img
               className="icon-flag"
               src="/Rosette/assets/saudi-arabia.png"
@@ -71,18 +66,30 @@ const ChooseLanguage = () => {
         )}
 
         {language !== "french" && (
-          <MenuItem  value={"french"}>
-            <img className="icon-flag" src="/Rosette/assets/france.png" alt="france" />
+          <MenuItem value={"french"}>
+            <img
+              className="icon-flag"
+              src="/Rosette/assets/france.png"
+              alt="france"
+            />
           </MenuItem>
         )}
         {language !== "spanish" && (
-          <MenuItem  value={"spanish"}>
-            <img className="icon-flag" src="/Rosette/assets/spain.png" alt="spain" />
+          <MenuItem value={"spanish"}>
+            <img
+              className="icon-flag"
+              src="/Rosette/assets/spain.png"
+              alt="spain"
+            />
           </MenuItem>
         )}
         {language !== "german" && (
-          <MenuItem  value={"german"}>
-            <img className="icon-flag" src="/Rosette/assets/germany.png" alt="germany" />
+          <MenuItem value={"german"}>
+            <img
+              className="icon-flag"
+              src="/Rosette/assets/germany.png"
+              alt="germany"
+            />
           </MenuItem>
         )}
       </SelectType>

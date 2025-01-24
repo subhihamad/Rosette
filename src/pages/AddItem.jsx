@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import SelectType from "../components/SelectType";
-import { MenuItem } from "@mui/material";
 import SelectGroup from "../components/SelectGroup";
 import ColorsSelector from "../components/ColorsSelector";
 import UploadFile from "../components/UploadFile";
@@ -19,7 +17,7 @@ const AddItem = () => {
     <div className={`lg:mt-8 md:ml-[15%] xl:ml-0 `}>
       <section className={`xl:mt-5  mt-2 `}>
         <h1
-          className={`text-logo font-primary my-2  xl:text-3xl text-2xl  ${
+          className={`text-logo font-primary my-3  xl:text-3xl text-xl  ${
             language === "arabic" ? "text-right" : "text-left"
           } `}
         >
@@ -45,6 +43,13 @@ const AddItem = () => {
           >
             <div className="flex flex-col">
               <label className="font-primary  mb-2 text-xl " htmlFor="text">
+                <span
+                  className={`text-logo ${
+                    language === "arabic" ? "inline-block" : "hidden"
+                  }`}
+                >
+                  *
+                </span>{" "}
                 {language === "arabic"
                   ? "اسم العنصر"
                   : language === "french"
@@ -54,7 +59,13 @@ const AddItem = () => {
                   : language === "german"
                   ? "Einzelteilname"
                   : "Item Name"}{" "}
-                <span className="text-logo">*</span>
+                <span
+                  className={`text-logo ${
+                    language === "arabic" ? "hidden" : "inline-block"
+                  }`}
+                >
+                  *
+                </span>
               </label>
               <input
                 type="text"
@@ -88,6 +99,13 @@ const AddItem = () => {
             </div>
             <div className="flex flex-col mt-5 ">
               <label className="font-primary mb-2 text-xl " htmlFor="price">
+                <span
+                  className={`text-logo ${
+                    language === "arabic" ? "inline-block" : "hidden"
+                  }`}
+                >
+                  *
+                </span>{" "}
                 {language === "arabic"
                   ? "سعر العنصر"
                   : language === "french"
@@ -97,7 +115,13 @@ const AddItem = () => {
                   : language === "german"
                   ? "Artikelpreis"
                   : "Item Price"}{" "}
-                <span className="text-logo">*</span>
+                <span
+                  className={`text-logo ${
+                    language === "arabic" ? "hidden" : "inline-block"
+                  }`}
+                >
+                  *
+                </span>
               </label>
               <input
                 type="text"

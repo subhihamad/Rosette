@@ -1,8 +1,6 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 import { Link, NavLink, Outlet } from "react-router-dom";
-import SelectType from "./SelectType";
-import { MenuItem } from "@mui/material";
 import { userInfo } from "../context/ContextProvider";
 import ChooseLanguage from "./ChooseLanguage";
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useState } from "react";
 import { Link } from "react-router-dom";
 import SelectType from "../components/SelectType";
 import SearchIcon from "@mui/icons-material/Search";
@@ -7,7 +7,8 @@ import { MenuItem } from "@mui/material";
 import { userInfo } from "../context/ContextProvider";
 const Items = () => {
   const [value, setValue] = useState("");
-  const { language } = userInfo();
+  const {language} = userInfo();
+
   return (
     <main className="xl:mt-8">
       <div className="flex flex-wrap xl:justify-between items-center">
