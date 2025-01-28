@@ -98,7 +98,7 @@ input[type="file"] {
     @apply border-2 border-[#E3E2E0] xl:text-xl md:max-w-[75%]  xl:max-w-[445px] h-[35px] block p-6 rounded-lg focus:outline-none;
   }
   .input-addPost{
-    @apply border-2 border-[#E3E2E0] xl:text-xl xl:w-[550px] max-md:w-[450px] md:w-[500px] h-[35px] block p-6 rounded-lg focus:outline-none;
+    @apply border-2 border-[#E3E2E0] xl:text-xl xl:w-[550px] max-md:w-[450px] max-sm:w-[370px] md:w-[550px] h-[35px] block p-6 rounded-lg focus:outline-none;
   }
   .select-item{
    @apply  p-[13px] block  md:w-[75%] xl:w-[445px] w-full h-[52px] text-lg text-[#453A3C] cursor-pointer font-primary focus:outline-none border-2 border-gray-300 rounded-lg
