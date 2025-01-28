@@ -16,6 +16,8 @@ const ContextProvider = ({ children }) => {
     cookieValue ? cookieValue : "english"
   );
   const [saveData, setSaveData] = useState("empty");
+  const [postRequset,setPostRequest]=useState();
+
   useEffect(() => {
     if (cookieValue) {
       setSaveData(true);
@@ -35,6 +37,8 @@ const ContextProvider = ({ children }) => {
         setLanguage,
         saveData,
         setSaveData,
+        postRequset,
+        setPostRequest
       }}
     >
       {children}

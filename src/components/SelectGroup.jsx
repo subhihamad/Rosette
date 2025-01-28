@@ -141,6 +141,15 @@ const SelectGroup = () => {
       ? "Kategorie wählen"
       : "Choose category";
 
+    const back=language === "arabic"
+    ? "الرجوع"
+    : language === "french"
+    ? "revenir"
+    : language === "spanish"
+    ? "volver"
+    : language === "german"
+    ? "zurück"
+    : "Back";
   useEffect(() => {
     setSelectedCategory("");
     setSelectedLabel("");
@@ -165,6 +174,34 @@ const SelectGroup = () => {
     setIndoorPlantsValue(event.target.value);
     setSelectedLabel(`${indoorPlants}:${event.target.value}`);
   };
+  useEffect(() => {
+    if (
+      salesValue === "back" ||
+      bouquetsValue === "back" ||
+      indoorPlantsValue === "back"
+    ) {
+      setBouquetsValue("");
+      setIndoorPlantsValue("");
+      setSelectedCategory("");
+      setSalesValue("");
+      setSelectedLabel("");
+    }
+  }, [salesValue, bouquetsValue, indoorPlantsValue]);
+
+  useEffect(() => {
+    if (selectedLabel === "back" && salesValue) {
+      setSalesValue(sales);
+      setSelectedLabel("");
+    }
+    if (selectedLabel === "back" && bouquetsValue) {
+      setBouquetsValue(bouquets);
+      setSelectedLabel("");
+    }
+    if (selectedLabel === "back" && indoorPlantsValue) {
+      setIndoorPlantsValue(indoorPlants);
+      setSelectedLabel("");
+    }
+  }, [selectedLabel]);
 
   return (
     <>
@@ -209,6 +246,7 @@ const SelectGroup = () => {
                 <option value={salesOptions10}>{salesOptions10}</option>
                 <option value={salesOptions20}>{salesOptions20}</option>
                 <option value={salesOptions30}>{salesOptions30}</option>
+                <option value="back">{back}</option>
               </select>
             </div>
           )}
@@ -230,6 +268,7 @@ const SelectGroup = () => {
                 <option value={bouquetsCongratulations}>
                   {bouquetsCongratulations}
                 </option>
+                <option value={"back"}>{back}</option>
               </select>
             </div>
           )}
@@ -255,6 +294,7 @@ const SelectGroup = () => {
                 <option value={indoorPlantsPetFriendly}>
                   {indoorPlantsPetFriendly}
                 </option>
+                <option value={"back"}>{back}</option>
               </select>
             </div>
           )}
@@ -263,6 +303,8 @@ const SelectGroup = () => {
       {selectedLabel && (
         <div className="rounded-xl font-primary mt-8">
           <select
+            value={selectedLabel}
+            onChange={(e) => setSelectedLabel(e.target.value)}
             className={`select-item ${
               language === "arabic" ? "text-right" : "text-left"
             }`}
@@ -270,6 +312,7 @@ const SelectGroup = () => {
             <option className="font-primary font-semibold " value="">
               {selectedLabel}
             </option>
+            <option value={"back"}>{back}</option>
           </select>
         </div>
       )}

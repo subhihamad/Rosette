@@ -1,4 +1,4 @@
-import {useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import SelectType from "../components/SelectType";
 import SearchIcon from "@mui/icons-material/Search";
@@ -7,7 +7,7 @@ import { MenuItem } from "@mui/material";
 import { userInfo } from "../context/ContextProvider";
 const Items = () => {
   const [value, setValue] = useState("");
-  const {language} = userInfo();
+  const { language } = userInfo();
 
   return (
     <main className="xl:mt-8">
@@ -37,7 +37,6 @@ const Items = () => {
               textAlign: "center",
               fontFamily: "Lucida Bright",
               fontSize: "18px",
-
             }}
           >
             <MenuItem value="">
@@ -88,9 +87,11 @@ const Items = () => {
             </MenuItem>
           </SelectType>
         </div>
-        <div className={`border w-full border-[#E3E2E0] xl:mb-0 mb-5 xl:w-[350px] p-2 rounded-[15px] ${
-              language === "arabic" ? "text-right" : "text-left"
-            }`}>
+        <div
+          className={`border w-full border-[#E3E2E0] xl:mb-0 mb-5 xl:w-[350px] p-2 rounded-[15px] ${
+            language === "arabic" ? "text-right" : "text-left"
+          }`}
+        >
           <SearchIcon sx={{ color: "#979797", marginRight: "5px" }} />
           <input
             className={`focus:outline-none font-primary w-[90%] ${

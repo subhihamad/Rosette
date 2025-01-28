@@ -21,12 +21,12 @@ const ChooseLanguage = () => {
         case "german":
           return "/Rosette/assets/germany.png";
         default:
-          return null;
+          return "/Rosette/assets/united-kingdom.png";
       }
     };
 
     setImgSrc(getImageSource(language));
-  }, [language , saveData]);
+  },);
   console.log(language)
   return (
     <>
