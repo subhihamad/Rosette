@@ -141,15 +141,16 @@ const SelectGroup = () => {
       ? "Kategorie wählen"
       : "Choose category";
 
-    const back=language === "arabic"
-    ? "الرجوع"
-    : language === "french"
-    ? "revenir"
-    : language === "spanish"
-    ? "volver"
-    : language === "german"
-    ? "zurück"
-    : "Back";
+  const back =
+    language === "arabic"
+      ? "الرجوع"
+      : language === "french"
+      ? "revenir"
+      : language === "spanish"
+      ? "volver"
+      : language === "german"
+      ? "zurück"
+      : "Back";
   useEffect(() => {
     setSelectedCategory("");
     setSelectedLabel("");
@@ -180,10 +181,10 @@ const SelectGroup = () => {
       bouquetsValue === "back" ||
       indoorPlantsValue === "back"
     ) {
-      setBouquetsValue("");
-      setIndoorPlantsValue("");
       setSelectedCategory("");
       setSalesValue("");
+      setBouquetsValue("");
+      setIndoorPlantsValue("");
       setSelectedLabel("");
     }
   }, [salesValue, bouquetsValue, indoorPlantsValue]);

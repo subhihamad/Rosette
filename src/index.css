@@ -20,7 +20,7 @@ body {
   position: relative;
   cursor: pointer;
 }
-.notifacation::before {
+/* .notifacation::before {
   content: "";
   position: absolute;
   top: 0;
@@ -29,7 +29,7 @@ body {
   height: 12px;
   border-radius: 50%;
   background-color: #ab3333;
-}
+} */
 .file-input {
   appearance: none;
   border: none;
@@ -92,7 +92,7 @@ input[type="file"] {
     @apply flex items-center gap-5;
   }
   .card {
-    @apply xl:max-w-[220px]  xl:h-[275px] h-[210px] rounded-xl border-2 border-[#E3E2E0] p-5  cursor-pointer;
+    @apply xl:max-w-[220px]  xl:h-[300px] h-[250px] rounded-xl border-2 border-[#E3E2E0] p-5;
   }
   .input-addItem {
     @apply border-2 border-[#E3E2E0] xl:text-xl md:max-w-[75%]  xl:max-w-[445px] h-[35px] block p-6 rounded-lg focus:outline-none;

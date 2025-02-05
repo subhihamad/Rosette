@@ -26,8 +26,7 @@ const ChooseLanguage = () => {
     };
 
     setImgSrc(getImageSource(language));
-  },);
-  console.log(language)
+  });
   return (
     <>
       <SelectType
@@ -39,9 +38,13 @@ const ChooseLanguage = () => {
           color: "#979797",
           fontFamily: "Lucida Bright",
           fontSize: "18px",
+          backgroundColor:'#ffffff'
         }}
       >
-        <MenuItem  selected sx={{ margin: "0" }} value={language}>
+        <MenuItem disabled value="">
+        <img className="icon-flag" src="/Rosette/assets/world.png" alt="flag" />
+        </MenuItem>
+        <MenuItem   sx={{ margin: "0" }} value={language}>
           <img className="icon-flag" src={imgSrc} alt="flag" />
         </MenuItem>
 
