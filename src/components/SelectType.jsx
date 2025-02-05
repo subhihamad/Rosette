@@ -29,8 +29,8 @@ export default function SelectType({ style, children }) {
   }
 
   React.useEffect(() => {
-    if (saveData === true) setCookie("lanuageCookie", language, 3);
-  });
+    if (saveData === true ) setCookie("lanuageCookie", language, 3);
+  },[language,saveData]);
 
   const handleChange = (event) => {
     setValue(event.target.value);

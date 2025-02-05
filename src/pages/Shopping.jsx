@@ -198,7 +198,13 @@ const Shopping = () => {
               <div className="mt-2">
                 <button
                   onClick={deleteProductFromCart}
-                  className="border xl:text-base text-sm  border-[#979797] xl:w-16 w-14  rounded-lg "
+                  className={`border xl:text-base text-sm  border-[#979797]  rounded-lg ${
+                    language === "german" ||
+                    language === "spanish" ||
+                    language === "french"
+                      ? "xl:w-[90px] w-[83px]"
+                      : "xl:w-16 w-14 "
+                  } `}
                 >
                   {deleteProduct}
                 </button>

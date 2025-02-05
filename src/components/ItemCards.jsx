@@ -136,7 +136,7 @@ const ItemCards = () => {
                   language === "german" ||
                   language === "spanish" ||
                   language === "french"
-                    ? "xl:w-[85px] w-[83px]"
+                    ? "xl:w-[97px] w-[87px]"
                     : "xl:w-16 w-14 "
                 } `}
               >
